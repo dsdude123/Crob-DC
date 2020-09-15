@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1600046481 source:d:\users\conne\documents\dreamcast_projects\crob\main.cpp
+	<kos.h>
+	<dc/sound/sound.h>
+	<dc/sound/sfxmgr.h>
+	<SDL/SDL.h>
+	<arch/gdb.h>
+
