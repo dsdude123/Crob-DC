@@ -10,9 +10,11 @@
 #include <kos.h>
 #include <dc/sound/sound.h>
 #include <dc/sound/sfxmgr.h>
-
+#include <dc/maple/vmu.h>
 // SDL
 #include <SDL/SDL.h>
+
+#include "vmu_textures.h"
 
 #ifdef DEBUG
 #include <arch/gdb.h>
@@ -69,6 +71,8 @@ int main(int argc, char *argv[]) {
     image = SDL_LoadBMP("/rd/crob.bmp");
     sfxhnd_t crob = snd_sfx_load("/rd/crob.wav");
 
+    bool cawOnVmu = false;
+
     while(true) {
         SDL_Rect * crobPos = new SDL_Rect();
         randX = rand() % 511;
@@ -83,6 +87,14 @@ int main(int argc, char *argv[]) {
         SDL_BlitSurface(image, NULL, screen, crobPos); // Draw the crob
         SDL_Flip(screen); // Show the screen
         snd_sfx_play(crob, 255, 128);
+
+        if(!cawOnVmu) {
+            vmu_set_icon(vmu_caw);
+            cawOnVmu = true;
+        } else {
+            vmu_set_icon(vmu_blank);
+            cawOnVmu = false;
+        }
 
         SDL_Delay(1000);
         delete crobPos;

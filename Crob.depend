@@ -1,8 +1,12 @@
 # depslib dependency file v1.0
-1600046481 source:d:\users\conne\documents\dreamcast_projects\crob\main.cpp
+1600589157 source:d:\users\conne\documents\dreamcast_projects\crob\main.cpp
 	<kos.h>
 	<dc/sound/sound.h>
 	<dc/sound/sfxmgr.h>
+	<dc/maple/vmu.h>
 	<SDL/SDL.h>
+	"vmu_textures.h"
 	<arch/gdb.h>
+
+1600588963 d:\users\conne\documents\dreamcast_projects\crob\vmu_textures.h
 
